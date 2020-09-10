@@ -11,6 +11,7 @@ body{
     flex-flow: column wrap;
     justify-content: space-between;
     align-items: stretch;
+    
 }
 
 .header {
@@ -40,6 +41,13 @@ svg{
   filter: drop-shadow(0 0 5px black);
 }
 
+h1 {
+  -webkit-filter: drop-shadow(0 0 20px black);
+  filter: drop-shadow(0 5px 20px black);
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 svg:hover {
   transition: .5s cubic-bezier(0.085, 0.80, 0.2, 1);
   transition-property: all;
@@ -48,7 +56,7 @@ svg:hover {
   transition-delay: 0s;
   height: 10px;
   height: 3rem;
-  -webkit-filter: drop-shadow(0 0 10x white);
+  -webkit-filter: drop-shadow(0 0 10px white);
   filter: drop-shadow(0 0 10px white);
   margin: 0;
   margin-top: 0px;
@@ -66,3 +74,33 @@ a{
   color: white;
   text-decoration: none;
 }
+
+.stage {
+  border-bottom: 0px solid #444;
+  display: flex;
+  height: 125px;
+  width: 100%;
+}
+.box {
+  align-self: flex-end;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  height: 100px;
+  margin: 0 auto 0 auto;
+  transform-origin: bottom;
+  width: 200px;
+}
+.bounce-6 {
+  animation-name: bounce-6;
+  animation-timing-function: ease;
+}
+@keyframes bounce-6 {
+  0%   { transform: scale(1,1)      translateY(0); }
+  10%  { transform: scale(1.1,.9)   translateY(0); }
+  30%  { transform: scale(.9,1.1)   translateY(-50px); }
+  50%  { transform: scale(1.05,.95) translateY(0); }
+  57%  { transform: scale(1,1)      translateY(-7px); }
+  64%  { transform: scale(1,1)      translateY(0); }
+  100% { transform: scale(1,1)      translateY(0); }
+}
+
